@@ -14,7 +14,7 @@ public class SwingLogin extends JFrame implements ActionListener{
 	JPasswordField tfPwd = new JPasswordField();
 	
 	JButton btnlogin = new JButton("로그인");
-	JButton btnCancel = new JButton("취소");
+	JButton btncancel = new JButton("취소");
 	
 	JLabel lbResult = new JLabel("결과출력", JLabel.LEFT);
 	
@@ -37,21 +37,21 @@ public class SwingLogin extends JFrame implements ActionListener{
 		JLabel lbPwd = new JLabel ("비밀번호", JLabel.CENTER);
 		
 		btnlogin.setBackground(Color.yellow);
-		btnCancel.setBackground(Color.pink);
+		btncancel.setBackground(Color.pink);
 		
 		p.add(lbId);
 		p.add(tfId);
 		p.add(lbPwd);
 		p.add(tfPwd);
 		p.add(btnlogin);
-		p.add(btnCancel);
+		p.add(btncancel);
 		
 		add(p, BorderLayout.CENTER);
-		
+		//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
 		add(lbResult, BorderLayout.SOUTH);
 		
 		btnlogin.addActionListener(this);
-		btnCancel.addActionListener(this);
+		btncancel.addActionListener(this);
 		
 		setTitle("로그인");
 		setSize(300, 250);
@@ -68,23 +68,22 @@ public class SwingLogin extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
-		if(e.getSource() == btnlogin) { 
-			String strid = tfId.getText();
-			String strpwd = new String(tfPwd.getPassword());
+		if (e.getSource() == btnlogin) {
+			String strId = tfId.getText();
+			String strPwd = new String (tfPwd.getPassword());
 			
-			if(strid.length() == 0)
+			if(strId.length() == 0)
 				lbResult.setText("아이디를 입력하세요");
-			else if(strpwd.length() == 0)
+			else if(strPwd.length() == 0)
 				lbResult.setText("비밀번호를 입력하세요");
 			else
-				lbResult.setText(strid+"님의 비밀번호는 " + strpwd + "입니다.");
+				lbResult.setText(strId+"님의 비밀번호는 " + strPwd + "입니다.");
 		}
-		
-		else if (e.getSource() == btnCancel) {
+		else if (e.getSource() == btncancel) {
 			lbResult.setText("취소하였습니다.");
 			tfId.setText("");
 			tfPwd.setText("");
+			
 		}
 	}
 	
