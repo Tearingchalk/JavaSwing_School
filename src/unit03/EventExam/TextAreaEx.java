@@ -12,7 +12,7 @@ public class TextAreaEx extends JFrame implements ActionListener{
 	JTextArea ta = new JTextArea(7,20);
 	JScrollPane sp = new JScrollPane(ta);
 	
-	TextAreaEx() {
+	TextAreaEx() {  ///
 		
 		JPanel p = new JPanel();
 		add(p);
